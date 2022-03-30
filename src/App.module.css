@@ -17,5 +17,13 @@
 	height: 28px;
 }
 
+.Aside__nav {
+	display: grid;
+}
+
+.Aside__link {
+	padding: 16px 13px;
+}
+
 .Main {
 }
