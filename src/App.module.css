@@ -1,2 +1,21 @@
 .App {
+	font-family: 'SF Pro Display', sans-serif;
+	display: grid;
+	grid-template-columns: 240px auto;
+	min-height: 1000px;
+}
+
+.Aside {
+	background: #091336;
+	padding: 23px 12px;
+}
+
+.Aside__logo {
+	display: block;
+	max-width: 109px;
+	width: 100%;
+	height: 28px;
+}
+
+.Main {
 }
