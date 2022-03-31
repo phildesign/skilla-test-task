@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Link } from 'react-router-dom';
 import cn from 'classnames';
 import styles from './App.module.css';
+import Header from './components/Header/Header';
 
 export interface INavData {
 	id: number;
@@ -106,11 +107,13 @@ const App = () => {
 			<div className={styles.App}>
 				<aside className={styles.Aside}>
 					<div className={styles.Aside__logo}>
-						<img src="./img/logo.svg" alt="" className="Aside__logo-img" />
+						<img src="./img/logo.svg" alt="Skilla" className={styles.Aside__logoImg} />
 					</div>
 					<nav className={styles.Aside__nav}>{navItems}</nav>
 				</aside>
-				<main className={styles.Main}>Тест</main>
+				<main className={styles.Main}>
+					<Header />
+				</main>
 			</div>
 		</Router>
 	);
