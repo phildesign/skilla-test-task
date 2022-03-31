@@ -5,7 +5,8 @@ import styles from './App.module.css';
 import Header from './components/Header/Header';
 import logo from './img/logo.svg';
 import svgSprite from './img/icons/sprite.svg';
-export interface INavData {
+import List from './components/List/List';
+interface INavData {
 	id: number;
 	icon: string;
 	link: string;
@@ -114,6 +115,7 @@ const App = () => {
 				</aside>
 				<main className={styles.Main}>
 					<Header />
+					<List />
 				</main>
 			</div>
 		</Router>

@@ -1,0 +1,54 @@
+.List {
+	max-width: 1440px;
+	width: 100%;
+	margin: 0 auto;
+	background: #ffffff;
+	box-shadow: 0px 4px 5px #e9edf3;
+	border-radius: 8px;
+	margin-top: 60px;
+	padding: 0 40px;
+}
+
+.List__top {
+	display: grid;
+}
+
+.List__row {
+	display: grid;
+	grid-template-columns: repeat(7, auto);
+	padding: 26px 0;
+	border-top: 1px solid #eaf0fa;
+}
+
+.List__col {
+}
+
+.List__col:last-child .List__title {
+	text-align: right;
+}
+
+.List__title {
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 100%;
+	color: #899cb1;
+}
+
+.List__main {
+}
+
+.List__iconType {
+}
+
+.List__iconTypeIncoming {
+	fill: #005ff8;
+	transform: rotate(180deg);
+}
+
+.List__iconTypeOutgoing {
+	fill: #28a879;
+}
+
+.List__iconTypeMissed {
+	fill: #ea1a4f;
+}
