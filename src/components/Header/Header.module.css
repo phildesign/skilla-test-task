@@ -102,3 +102,30 @@
 	width: 16px;
 	height: 16px;
 }
+
+.Header__organization {
+	font-weight: 400;
+	font-size: 15px;
+	line-height: 140%;
+	color: #899cb1;
+	border: none;
+	outline: none;
+	padding-right: 5px;
+}
+
+.Header__organizationOption {
+	height: 48px;
+}
+
+.Header__user {
+}
+
+.Header__userPhoto {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	overflow: hidden;
+}
+
+.Header__userPhotoImg {
+}

@@ -3,7 +3,8 @@ import { BrowserRouter as Router, Link } from 'react-router-dom';
 import cn from 'classnames';
 import styles from './App.module.css';
 import Header from './components/Header/Header';
-
+import logo from './img/logo.svg';
+import svgSprite from './img/icons/sprite.svg';
 export interface INavData {
 	id: number;
 	icon: string;
@@ -95,7 +96,7 @@ const App = () => {
 				})}
 				key={item.id}>
 				<svg className={styles.Aside__icon}>
-					<use xlinkHref={`../img/icons/sprite.svg#${item.icon}`}></use>
+					<use xlinkHref={`${svgSprite}#${item.icon}`}></use>
 				</svg>
 				{item.text}
 			</Link>
@@ -107,7 +108,7 @@ const App = () => {
 			<div className={styles.App}>
 				<aside className={styles.Aside}>
 					<div className={styles.Aside__logo}>
-						<img src="./img/logo.svg" alt="Skilla" className={styles.Aside__logoImg} />
+						<img src={logo} alt="Skilla" className={styles.Aside__logoImg} />
 					</div>
 					<nav className={styles.Aside__nav}>{navItems}</nav>
 				</aside>
