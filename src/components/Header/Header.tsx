@@ -2,6 +2,7 @@ import React from 'react';
 import cn from 'classnames';
 import styles from './Header.module.css';
 import userPhoto from '../../img/photo.png';
+import svgSprite from '../../img/icons/sprite.svg';
 
 const Header = () => {
 	return (
@@ -45,20 +46,22 @@ const Header = () => {
 				<div className={styles.Header__right}>
 					<div className={styles.Header__search}>
 						<svg className={styles.Header__searchIcon}>
-							<use xlinkHref="../img/icons/sprite.svg#search"></use>
+							<use xlinkHref={`${svgSprite}#search`}></use>
 						</svg>
 					</div>
-					<select name="" id="" className={styles.Header__organization}>
-						<option value="" className={styles.Header__organizationOption}>
-							ИП Сидорова Александра Михайловна
-						</option>
-						<option value="" className={styles.Header__organizationOption}>
-							ИП Сидорова Александра Михайловна
-						</option>
-						<option value="" className={styles.Header__organizationOption}>
-							ИП Сидорова Александра Михайловна
-						</option>
-					</select>
+					<div className={styles.Header__organizationWrapper}>
+						<select name="" id="" className={styles.Header__organization}>
+							<option value="" className={styles.Header__organizationOption}>
+								ИП Сидорова Александра Михайловна
+							</option>
+							<option value="" className={styles.Header__organizationOption}>
+								ИП Сидорова Александра Михайловна
+							</option>
+							<option value="" className={styles.Header__organizationOption}>
+								ИП Сидорова Александра Михайловна
+							</option>
+						</select>
+					</div>
 					<div className={styles.Header__user}>
 						<div className={styles.Header__userPhoto}>
 							<img src={userPhoto} alt="" className={styles.Header__userPhotoImg} />
