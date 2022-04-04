@@ -20,7 +20,14 @@ const Header = () => {
 							Новые звонки
 							<span className={styles.Header__value}>20 из 30 шт</span>
 						</div>
-						<input type="range" min="0" max="100" value="50" className={styles.Header__range} />
+						<input
+							type="range"
+							min="0"
+							max="100"
+							value="50"
+							className={styles.Header__range}
+							readOnly
+						/>
 					</div>
 					<div
 						className={cn(styles.Header__col, {
@@ -30,7 +37,14 @@ const Header = () => {
 							Качество разговоров
 							<span className={styles.Header__value}>40%</span>
 						</div>
-						<input type="range" min="0" max="100" value="40" className={styles.Header__range} />
+						<input
+							type="range"
+							min="0"
+							max="100"
+							value="40"
+							className={styles.Header__range}
+							readOnly
+						/>
 					</div>
 					<div
 						className={cn(styles.Header__col, {
@@ -40,7 +54,14 @@ const Header = () => {
 							Конверсия в заказ
 							<span className={styles.Header__value}>67%</span>
 						</div>
-						<input type="range" min="0" max="100" value="67" className={styles.Header__range} />
+						<input
+							type="range"
+							min="0"
+							max="100"
+							value="67"
+							className={styles.Header__range}
+							readOnly
+						/>
 					</div>
 				</div>
 				<div className={styles.Header__right}>

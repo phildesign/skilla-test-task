@@ -1,0 +1,12 @@
+.Type_Incoming {
+	fill: #005ff8;
+	transform: rotate(180deg);
+}
+
+.Type_Outgoing {
+	fill: #28a879;
+}
+
+.Type_TypeMissed {
+	fill: #ea1a4f;
+}

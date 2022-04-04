@@ -15,8 +15,9 @@
 
 .List__row {
 	display: grid;
-	grid-template-columns: repeat(7, auto);
-	padding: 26px 0;
+	grid-template-columns: 52px 87px 125px 324px 213px 460px auto;
+	height: 65px;
+	align-items: center;
 	border-top: 1px solid #eaf0fa;
 }
 
@@ -27,6 +28,17 @@
 	text-align: right;
 }
 
+.List__col:last-child .List__cell {
+	text-align: right;
+}
+
+.List__cell {
+	font-weight: 400;
+	font-size: 15px;
+	line-height: 140%;
+	color: #122945;
+}
+
 .List__title {
 	font-weight: 400;
 	font-size: 14px;
@@ -34,21 +46,11 @@
 	color: #899cb1;
 }
 
+.List__userPhoto {
+	width: 32px;
+	height: 32px;
+	object-fit: contain;
+}
+
 .List__main {
-}
-
-.List__iconType {
-}
-
-.List__iconTypeIncoming {
-	fill: #005ff8;
-	transform: rotate(180deg);
-}
-
-.List__iconTypeOutgoing {
-	fill: #28a879;
-}
-
-.List__iconTypeMissed {
-	fill: #ea1a4f;
 }
