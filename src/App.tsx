@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Link } from 'react-router-dom';
 import cn from 'classnames';
 import styles from './App.module.css';
@@ -7,6 +7,9 @@ import logo from './img/logo.svg';
 import svgSprite from './img/icons/sprite.svg';
 import List from './components/List/List';
 import Filter from './components/Filter/Filter';
+import axios from 'axios';
+import { CallModel } from './interfaces/call.interface';
+
 interface INavData {
 	id: number;
 	icon: string;
@@ -16,6 +19,34 @@ interface INavData {
 }
 
 const App = (): JSX.Element => {
+	const [error, setError] = useState(null);
+	const [isLoaded, setIsLoaded] = useState(false);
+	const [items, setItems] = useState<CallModel[]>();
+
+	useEffect(() => {
+		axios
+			.post(
+				`https://api.skilla.ru/mango/getList?date_start=2021-12-01&date_end=2021-12-01&in_out=0`,
+				null,
+				{
+					headers: {
+						Authorization: `Bearer ${process.env.REACT_APP_TOKEN}`,
+					},
+				},
+			)
+			.then((res) => {
+				setItems(res.data);
+				setIsLoaded(true);
+			})
+			.catch(function (error) {
+				setError(error);
+			});
+	}, []);
+
+	const handleFilterData = () => {};
+
+	const handleFilterType = () => {};
+
 	const navData: INavData[] = [
 		{
 			id: 1,
@@ -117,7 +148,7 @@ const App = (): JSX.Element => {
 				<main className={styles.Main}>
 					<Header />
 					<Filter />
-					<List />
+					<List items={items} isLoaded />
 				</main>
 			</div>
 		</Router>

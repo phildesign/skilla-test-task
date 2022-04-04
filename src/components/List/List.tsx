@@ -1,38 +1,9 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import React from 'react';
 import styles from './List.module.css';
-import { CallModel } from '../../interfaces/call.interface';
 import Type from '../Type/Type';
+import { ListProps } from './List.props';
 
-const List = (): JSX.Element => {
-	const [error, setError] = useState(null);
-	const [isLoaded, setIsLoaded] = useState(false);
-	const [items, setItems] = useState<CallModel[]>();
-
-	useEffect(() => {
-		axios
-			.post(
-				`https://api.skilla.ru/mango/getList?date_start=2021-12-01&date_end=2021-12-01&in_out=0`,
-				null,
-				{
-					headers: {
-						Authorization: `Bearer ${process.env.REACT_APP_TOKEN}`,
-					},
-				},
-			)
-			.then((res) => {
-				setItems(res.data);
-				setIsLoaded(true);
-			})
-			.catch(function (error) {
-				setError(error);
-			});
-	}, []);
-
-	const handleFilterData = () => {};
-
-	const handleFilterType = () => {};
-
+const List = ({ isLoaded, items }: ListProps): JSX.Element => {
 	const itemsList = items?.map((item) => {
 		return (
 			<div className={styles.List__row} key={item.id}>
