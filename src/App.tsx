@@ -9,14 +9,7 @@ import List from './components/List/List';
 import Filter from './components/Filter/Filter';
 import axios from 'axios';
 import { CallModel } from './interfaces/call.interface';
-
-interface INavData {
-	id: number;
-	icon: string;
-	link: string;
-	text: string;
-	active: boolean;
-}
+import { NavModel } from './interfaces/nav.interface';
 
 const App = (): JSX.Element => {
 	const [error, setError] = useState(null);
@@ -47,7 +40,7 @@ const App = (): JSX.Element => {
 
 	const handleFilterType = () => {};
 
-	const navData: INavData[] = [
+	const navData: NavModel[] = [
 		{
 			id: 1,
 			icon: 'results',
@@ -148,7 +141,7 @@ const App = (): JSX.Element => {
 				<main className={styles.Main}>
 					<Header />
 					<Filter />
-					<List items={items} isLoaded />
+					<List items={items} isLoaded={isLoaded} />
 				</main>
 			</div>
 		</Router>

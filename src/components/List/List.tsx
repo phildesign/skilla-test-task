@@ -4,6 +4,8 @@ import Type from '../Type/Type';
 import { ListProps } from './List.props';
 
 const List = ({ isLoaded, items }: ListProps): JSX.Element => {
+	console.log(isLoaded);
+
 	const itemsList = items?.map((item) => {
 		return (
 			<div className={styles.List__row} key={item.id}>
