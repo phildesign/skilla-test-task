@@ -4,7 +4,7 @@ import styles from './List.module.css';
 import { CallModel } from '../../interfaces/call.interface';
 import Type from '../Type/Type';
 
-const List = () => {
+const List = (): JSX.Element => {
 	const [error, setError] = useState(null);
 	const [isLoaded, setIsLoaded] = useState(false);
 	const [items, setItems] = useState<CallModel[]>();
@@ -28,6 +28,10 @@ const List = () => {
 				setError(error);
 			});
 	}, []);
+
+	const handleFilterData = () => {};
+
+	const handleFilterType = () => {};
 
 	const itemsList = items?.map((item) => {
 		return (

@@ -6,6 +6,7 @@ import Header from './components/Header/Header';
 import logo from './img/logo.svg';
 import svgSprite from './img/icons/sprite.svg';
 import List from './components/List/List';
+import Filter from './components/Filter/Filter';
 interface INavData {
 	id: number;
 	icon: string;
@@ -115,6 +116,7 @@ const App = (): JSX.Element => {
 				</aside>
 				<main className={styles.Main}>
 					<Header />
+					<Filter />
 					<List />
 				</main>
 			</div>

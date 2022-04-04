@@ -1,0 +1,21 @@
+.Filter {
+	max-width: 1440px;
+	width: 100%;
+	margin: 30px auto;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.Filter__select {
+	background: none;
+	border: none;
+	outline: none;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 148%;
+	color: #5e7793;
+	opacity: 0.87;
+}
+
+.Filter__option {
+}
