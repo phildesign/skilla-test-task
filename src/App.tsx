@@ -14,7 +14,7 @@ interface INavData {
 	active: boolean;
 }
 
-const App = () => {
+const App = (): JSX.Element => {
 	const navData: INavData[] = [
 		{
 			id: 1,

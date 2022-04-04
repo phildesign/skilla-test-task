@@ -22,6 +22,10 @@ const List = () => {
 			)
 			.then((res) => {
 				setItems(res.data);
+				setIsLoaded(true);
+			})
+			.catch(function (error) {
+				setError(error);
 			});
 	}, []);
 
@@ -61,32 +65,38 @@ const List = () => {
 
 	return (
 		<div className={styles.List}>
-			<div className={styles.List__top}>
-				<div className={styles.List__row}>
-					<div className={styles.List__col}>
-						<div className={styles.List__title}>Тип</div>
+			{isLoaded ? (
+				<>
+					<div className={styles.List__top}>
+						<div className={styles.List__row}>
+							<div className={styles.List__col}>
+								<div className={styles.List__title}>Тип</div>
+							</div>
+							<div className={styles.List__col}>
+								<div className={styles.List__title}>Время</div>
+							</div>
+							<div className={styles.List__col}>
+								<div className={styles.List__title}>Сотрудник</div>
+							</div>
+							<div className={styles.List__col}>
+								<div className={styles.List__title}>Звонок</div>
+							</div>
+							<div className={styles.List__col}>
+								<div className={styles.List__title}>Источник</div>
+							</div>
+							<div className={styles.List__col}>
+								<div className={styles.List__title}>Оценка</div>
+							</div>
+							<div className={styles.List__col}>
+								<div className={styles.List__title}>Длительность</div>
+							</div>
+						</div>
 					</div>
-					<div className={styles.List__col}>
-						<div className={styles.List__title}>Время</div>
-					</div>
-					<div className={styles.List__col}>
-						<div className={styles.List__title}>Сотрудник</div>
-					</div>
-					<div className={styles.List__col}>
-						<div className={styles.List__title}>Звонок</div>
-					</div>
-					<div className={styles.List__col}>
-						<div className={styles.List__title}>Источник</div>
-					</div>
-					<div className={styles.List__col}>
-						<div className={styles.List__title}>Оценка</div>
-					</div>
-					<div className={styles.List__col}>
-						<div className={styles.List__title}>Длительность</div>
-					</div>
-				</div>
-			</div>
-			<div className={styles.List__main}>{itemsList}</div>
+					<div className={styles.List__main}>{itemsList}</div>
+				</>
+			) : (
+				<div className={styles.List__loading}>Загрузка...</div>
+			)}
 		</div>
 	);
 };

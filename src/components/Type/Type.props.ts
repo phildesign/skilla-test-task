@@ -1,2 +1,2 @@
-import { CallModel } from './../../interfaces/call.interface';
+import { CallModel } from '../../interfaces/call.interface';
 export interface TypeProps extends CallModel {}
