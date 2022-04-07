@@ -7,8 +7,8 @@ const Type = ({ in_out, status }: TypeProps): JSX.Element => {
 	return (
 		<svg
 			className={cn(styles.Type, {
-				[styles.Type_Incoming]: in_out === '0' && status === 'Дозвонился',
-				[styles.Type_Outgoing]: in_out === '1' && status === 'Дозвонился',
+				[styles.Type_Incoming]: in_out === '0',
+				[styles.Type_Outgoing]: in_out === '1',
 				[styles.Type_TypeMissed]: status === 'Не дозвонился',
 			})}
 			width="13"

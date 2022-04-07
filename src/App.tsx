@@ -15,11 +15,18 @@ const App = (): JSX.Element => {
 	const [error, setError] = useState(null);
 	const [isLoaded, setIsLoaded] = useState(false);
 	const [items, setItems] = useState<CallModel[]>();
+	const [call, setCall] = useState<string>('');
+
+	const calls = {
+		all: '',
+		incoming: '0',
+		outgoing: '1',
+	};
 
 	useEffect(() => {
 		axios
 			.post(
-				`https://api.skilla.ru/mango/getList?date_start=2021-12-01&date_end=2021-12-01&in_out=0`,
+				`https://api.skilla.ru/mango/getList?date_start=2021-12-01&date_end=2021-12-01&in_out=${call}`,
 				null,
 				{
 					headers: {
@@ -34,11 +41,26 @@ const App = (): JSX.Element => {
 			.catch(function (error) {
 				setError(error);
 			});
-	}, []);
+	}, [call]);
 
 	const handleFilterData = () => {};
 
-	const handleFilterType = () => {};
+	const handleFilterType = (e: any) => {
+		switch (e.target.value) {
+			case 'all':
+				setCall(calls.all);
+				break;
+			case 'incoming':
+				setCall(calls.incoming);
+				break;
+			case 'outgoing':
+				setCall(calls.outgoing);
+				break;
+			default:
+				setCall(calls.all);
+				break;
+		}
+	};
 
 	const navData: NavModel[] = [
 		{
@@ -140,7 +162,7 @@ const App = (): JSX.Element => {
 				</aside>
 				<main className={styles.Main}>
 					<Header />
-					<Filter />
+					<Filter handleFilterType={handleFilterType} />
 					<List items={items} isLoaded={isLoaded} />
 				</main>
 			</div>
